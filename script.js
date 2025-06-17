@@ -1,0 +1,25 @@
+const userNumInput = prompt("Enter an integer");
+if (userNumInput === null) {
+    alert(`You're canceled`);
+} else if (userNumInput.trim() === '') {
+    alert('You entered empty numbers');
+} else if (isNaN(Number(userNumInput))) {
+    alert(`It's must be a number`);
+} else {
+    if (userNumInput <= 1) {
+        alert("It's not a prime number");
+    } else {
+        let isPrime = true;
+        for (let i = 2; i < userNumInput; i++) {
+            if (userNumInput % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) {
+            alert("It's a prime number");
+        } else {
+            alert("It's not a prime number");
+        }
+    }
+}
