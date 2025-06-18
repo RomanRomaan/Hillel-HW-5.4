@@ -6,12 +6,15 @@ if (userNumInput === null) {
 } else if (isNaN(Number(userNumInput))) {
     alert(`It's must be a number`);
 } else {
-    if (userNumInput <= 1) {
+    const num = Number(userNumInput)
+    if (num <= 1) {
         alert("It's not a prime number");
+    } else if (!Number.isInteger(num)) {
+        alert("It's not an integer");
     } else {
         let isPrime = true;
-        for (let i = 2; i < userNumInput; i++) {
-            if (userNumInput % i === 0) {
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
                 isPrime = false;
                 break;
             }
